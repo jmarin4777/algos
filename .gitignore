@@ -1,2 +1,9 @@
 images/
 graphs.txt
+
+tests/*
+!tests/package.json
+!tests/package-lock.json
+!tests/spec
+tests/spec/*
+!tests/spec/algos/
