@@ -1,9 +1,8 @@
-images/
-graphs.txt
+javascript/tests/*
+!javascript/tests/package.json
+!javascript/tests/package-lock.json
+!javascript/tests/spec
+javascript/tests/spec/*
+!javascript/tests/spec/algos/
 
-tests/*
-!tests/package.json
-!tests/package-lock.json
-!tests/spec
-tests/spec/*
-!tests/spec/algos/
+python/longestSubStr.py
