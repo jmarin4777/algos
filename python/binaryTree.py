@@ -3,12 +3,11 @@ class TreeNode:
         self.left = self.right = None
         self.val = val
 
-
 class BinaryTree:
     def __init__(self):
         self.root = None
 
-    #assuming a sorted array with positive integers
+    #for an array with only positive integers, the child nodes for each index i are 2*i+1 (left child) and 2*i+2 (right child)
     def createFromList(self, arr, i=None, n=None):
         if i == None:
             i = 0
@@ -21,12 +20,14 @@ class BinaryTree:
             if(2*i+2 < n):
                 root.right = self.createFromList(arr, 2*i+2, n)
         return root
-    
-    def toList(self, root):
+
+    #creating a list from a BST
+    def BSTtoList(self, root):
         if root == None:
             return []
-        return self.toList(root.left) + [root.val] + self.toList(root.right)
+        return self.BSTtoList(root.left) + [root.val] + self.BSTtoList(root.right)
 
+    #coverting a sorted linked list to an array list
     def sortedListToBST(self, listNode) -> TreeNode:
         runner = listNode
         arr = []
@@ -34,7 +35,8 @@ class BinaryTree:
             arr.append(runner.val)
             runner = runner.next
         return self.createFromSLL(arr, int((len(arr)-1)/2))
-        
+
+    #using the median in order to create a height balanced BST from a list
     def createFromSLL(self, arr, i):
         if len(arr) == 0:
             return None
