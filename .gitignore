@@ -5,4 +5,7 @@ javascript/tests/*
 javascript/tests/spec/*
 !javascript/tests/spec/algos/
 
+javascript/partition.js
 python/longestSubStr.py
+
+misc/
